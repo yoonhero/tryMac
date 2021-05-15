@@ -27,7 +27,9 @@ function App() {
   const history = useHistory()
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
+  const audio = new Audio("./bigsur.mp3")
   useEffect(() => {
+    audio.play()
     authService.onAuthStateChanged((user) => {
       if (user) {
         setUserObj({
@@ -74,9 +76,10 @@ function App() {
             </Route>
 
           </Switch>
-        </Router> : <LoadingPage>
-          <img src="./applelogo.png" />
-        </LoadingPage> }
+        </Router> :
+          <LoadingPage>
+            <img src="./applelogo.png" />
+          </LoadingPage> }
 
       </ThemeProvider>
 
