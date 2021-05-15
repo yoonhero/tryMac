@@ -141,7 +141,7 @@ const Battery = styled.div`
 
 
 export const Header = () => {
-  const [battery, setBattery] = useState(0);
+  const [battery, setBattery] = useState(0.8);
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState()
   const [minutes, setMinutes] = useState()
@@ -156,15 +156,15 @@ export const Header = () => {
     setMinutes(date.getMinutes())
     setSeconds(date.getSeconds())
   }, [date])
-  let batteryPromise = navigator.getBattery();
-  batteryPromise.then(batteryCallback);
+  // let batteryPromise = navigator.getBattery();
+  // batteryPromise.then(batteryCallback);
 
-  function batteryCallback(batteryObject) {
-    printBatteryStatus(batteryObject);
-  }
-  function printBatteryStatus(batteryObject) {
-    setBattery(batteryObject.level)
-  }
+  // function batteryCallback(batteryObject) {
+  //   printBatteryStatus(batteryObject);
+  // }
+  // function printBatteryStatus(batteryObject) {
+  //   setBattery(batteryObject.level)
+  // }
   return (
     <SHeader>
       <Wrapper>
