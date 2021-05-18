@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import { ImageLoad } from "./ImageLoad";
 
 const SHeader = styled.header`
 position:fixed;
@@ -50,8 +51,7 @@ const Icon = styled.span`
   align-items: center;
   margin-left: 15px;
   img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
   }
 `;
 
@@ -171,7 +171,7 @@ export const Header = () => {
         <Column>
           <Icon>
             <Link to="/">
-              <Logo className="ourlogo">Apple</Logo>
+              <ImageLoad className="ourlogo" image={ "./applelogo.png" } />
             </Link>
           </Icon>
 

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"
 import ScriptTag from "react-script-tag/lib/ScriptTag";
 import styled from "styled-components";
 import { Header } from "./Header";
@@ -8,15 +9,22 @@ const Content = styled.main`
   top:0;
   left:0;
   width: 100vw;
-  background-image: url("./bigsur.png");
+
   height: 100vh;
 `;
 
 const Layout = ({ children }) => {
+  const [sourceLoaded, setSourceLoaded] = useState(null)
+  const [src, setSrc] = useState("./bigsur.png")
+  useEffect(() => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => setSourceLoaded(src)
+  }, [src])
   return (
     <>
       <Header />
-      <Content>{ children }</Content>
+      <Content style={ { backgroundImage: `url(${sourceLoaded})` } }>{ children }</Content>
     </>
   );
 };

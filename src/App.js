@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components";
 import Auth from "./screens/Auth";
 import { authService } from "./fbase"
 import styled from "styled-components"
+import { ImageLoad } from "./components/ImageLoad";
 
 const LoadingPage = styled.div`
   width: 100vw;
@@ -78,7 +79,7 @@ function App() {
           </Switch>
         </Router> :
           <LoadingPage>
-            <img src="./applelogo.png" />
+            <ImageLoad image={ "./applelogo.png" } />
           </LoadingPage> }
 
       </ThemeProvider>
