@@ -1,8 +1,2 @@
-rules_version = '2';
-service cloud.firestore {
-match /databases/{database}/documents {
-match /{document=\*\*} {
-allow read, write: if false;
-}
-}
-}
+# TryMac
+[![wakatime](https://wakatime.com/badge/github/yoonhero/trymac.svg)](https://wakatime.com/badge/github/yoonhero/trymac)
